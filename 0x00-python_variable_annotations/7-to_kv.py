@@ -9,4 +9,4 @@ def to_kv(k: str, v: Union[float, int]) -> tuple[str, float]:
     The first element of the tuple is the string k.
     The second element is the square of the int/float v
     should be annotated as a float."""
-    return (k, v*v)
+    return (k, float(v*v))
