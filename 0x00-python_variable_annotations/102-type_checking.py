@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-
+"""This module contains zoom_array function"""
 from typing import Tuple, List, Any
 
 
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """The function repeated each item in the tiple by factor and returns
+    the  new list """
     zoomed_in: List[Any] = [
         item for item in lst
         for i in range(factor)
