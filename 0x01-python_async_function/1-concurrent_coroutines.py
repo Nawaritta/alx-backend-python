@@ -6,7 +6,7 @@ from typing import List
 module = __import__("0-basic_async_syntax")
 
 
-async def wait_n(n: int, max_delay: int) -> List:
+async def wait_n(n: int, max_delay: int) -> List[float]:
     """return the list of all the delays in ascending order"""
     delays = []
     for i in range(n):
