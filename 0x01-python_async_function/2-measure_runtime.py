@@ -7,7 +7,7 @@ module = __import__("1-concurrent_coroutines")
 
 
 async def measure_time(n: int, max_delay: int) -> float:
-    "measures the total execution time for wait_n(n, max_delay)"
+    """measures the total execution time for wait_n(n, max_delay)"""
     start = time.time()
     await module.wait_n(n, max_delay)
     end = time.time()
