@@ -18,7 +18,6 @@ class TestAccessNestedMap(unittest.TestCase):
     def test_access_nested_map(self, nested_map, path, expected_result):
         self.assertEqual(access_nested_map(nested_map, path), expected_result)
 
-
     @parameterized.expand([
         ({}, ("a",)),
         ({"a": 1}, ("a", "b"))
@@ -36,7 +35,6 @@ class TestGetJson(unittest.TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
     ])
-
     @patch('requests.get')
     def test_get_json(self, test_url, test_payload, mock_requests_get):
         """Sets up the mock object and its json method"""
