@@ -16,6 +16,7 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a", "b"), 2),
     ])
     def test_access_nested_map(self, nested_map, path, expected_result):
+        """test access"""
         self.assertEqual(access_nested_map(nested_map, path), expected_result)
 
     @parameterized.expand([
@@ -59,10 +60,12 @@ class TestMemoize(unittest.TestCase):
             """TestClass"""
 
             def a_method(self):
+                """method"""
                 return 42
 
             @memoize
             def a_property(self):
+                """property"""
                 return self.a_method()
 
         test_instance = TestClass()
