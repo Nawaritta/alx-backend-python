@@ -18,7 +18,7 @@ class TestGithubOrgClient(unittest.TestCase):
     @patch('client.get_json')
     def test_org(self, org_name, mock_get_json):
         """Tests GithubOrgClient.org"""
-        url = f"https://api.github.com/orgs/{org_name}"
+        url = "https://api.github.com/orgs/{}".format(org_name)
         github_client = GithubOrgClient(org_name)
         github_client.org()
         mock_get_json.assert_called_once_with(url)
@@ -81,14 +81,12 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """test public repos """
         github_client = GithubOrgClient("testorg")
         result = github_client.public_repos()
-
         self.assertEqual(result, self.expected_repos)
 
     def test_public_repos_with_license(self):
         """test public with license"""
         github_client = GithubOrgClient("testorg")
         result = github_client.public_repos(license="apache-2.0")
-
         self.assertEqual(result, self.apache2_repos)
 
 
